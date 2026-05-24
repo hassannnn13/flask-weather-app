@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+__pypackages__/
+
+# Flask instance folder and SQLite DB
+instance/
+weather.db
+*.sqlite3
+*.db
+
+# Environment variables / secrets
+.env
+.env.*
+.env.local
+
+# Migrations (if added later)
+migrations/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MyPy / type checkers
+.mypy_cache/
+.pyre/
+
+# Misc
+Pipfile.lock
+poetry.lock
+
+# Local runtime files
+*.pid
+
+# Ignore debug/work files that may be created by tooling
+*.tmp
+*.bak
