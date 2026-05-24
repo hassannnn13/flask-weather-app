@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name" value="{{ city }}">
+            <button type="submit">Get Weather</button>
+        </form>
+
+        {% if data %}
+            <div class="weather-info">
+                <h2>Weather in {{ data.name }}</h2>
+                <p>Temperature: {{ data.main.temp }}°C</p>
+                <p>Humidity: {{ data.main.humidity }}%</p>
+                <p>Weather: {{ data.weather[0].description }}</p>
+            </div>
+
+            {% if "cloud" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>☁️</p>
+                </div>
+            {% elif "rain" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>🌧️</p>
+                </div>
+            {% elif "clear" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>☀️</p>
+                </div>
+            {% elif "snow" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>❄️</p>
+                </div>
+            {% elif "thunderstorm" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>⛈️</p>
+                </div>
+            {% elif "mist" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>🌫️</p>
+                </div>
+            {% elif "fog" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>🌫️</p>
+                </div>
+            {% elif "haze" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>🌫️</p>
+                </div>
+            {% elif "smoke" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>🌫️</p>
+                </div>
+            {% elif "dust" in data.weather[0].description %}
+                <div class="weather-icon">
+                    <p>🌫️</p>
+                </div>
+            {% else %}
+                <div class="weather-icon">
+                    <p>❓</p>
+                </div>
+            {% endif %}
+
+        {% else %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
