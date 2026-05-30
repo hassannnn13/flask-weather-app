@@ -61,3 +61,6 @@ api_key = "YOUR_API_KEY"
 
 5. Run the application
 python app.py
+
+## Author
+Hassan Idrees
